@@ -37,10 +37,10 @@ let isError = ref(null);
 
 const loadData = async () => {
     try {
-        const nextPage = navigation ? navigation.current + 1 : "";
+        const nextPage = navigation ? `${navigation.current + 1}/` : "";
 
         const data = await fetch(
-            `http://flems.github.io/test/api/news/${nextPage}`
+            `https://flems.github.io/test/api/news/${nextPage}`
         ).then((response) => response.json());
 
         const { items, nav } = data;
